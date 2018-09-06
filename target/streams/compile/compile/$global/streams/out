@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/TwitterLiveStreaming/PrintTweets.scala:6:35: object twitter is not a member of package org.apache.spark.streaming[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.streaming.twitter._[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/TwitterLiveStreaming/PrintTweets.scala:28:18: not found: value TwitterUtils[0m
+[0m[[0m[31merror[0m] [0m[0m    val tweets = TwitterUtils.createStream(ssc, None)[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
