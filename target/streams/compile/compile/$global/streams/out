@@ -1,7 +1,31 @@
-[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/TwitterLiveStreaming/PrintTweets.scala:6:35: object twitter is not a member of package org.apache.spark.streaming[0m
-[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.streaming.twitter._[0m
-[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/TwitterLiveStreaming/PrintTweets.scala:28:18: not found: value TwitterUtils[0m
-[0m[[0m[31merror[0m] [0m[0m    val tweets = TwitterUtils.createStream(ssc, None)[0m
-[0m[[0m[31merror[0m] [0m[0m                 ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/KafkaExamples/KafkaWithSparkStreaming.scala:9:21: not found: type StreamingContext[0m
+[0m[[0m[31merror[0m] [0m[0m  val context = new StreamingContext("local[*]", "KafkaExample", Seconds(1))[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/KafkaExamples/KafkaWithSparkStreaming.scala:9:66: not found: value Seconds[0m
+[0m[[0m[31merror[0m] [0m[0m  val context = new StreamingContext("local[*]", "KafkaExample", Seconds(1))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/KafkaExamples/KafkaWithSparkStreaming.scala:15:64: Symbol 'term org.apache.spark.streaming.api' is missing from the classpath.[0m
+[0m[[0m[31merror[0m] [0m[0mThis symbol is required by 'method org.apache.spark.streaming.kafka010.KafkaUtils.createDirectStream'.[0m
+[0m[[0m[31merror[0m] [0m[0mMake sure that term api is in your classpath and check for conflicting dependencies with `-Ylog-classpath`.[0m
+[0m[[0m[31merror[0m] [0m[0mA full rebuild may help if 'KafkaUtils.class' was compiled against an incompatible version of org.apache.spark.streaming.[0m
+[0m[[0m[31merror[0m] [0m[0m  KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](context, kafkaParams, topics).map(_)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/KafkaExamples/KafkaWithSparkStreaming.scala:15:113: missing parameter type for expanded function ((x$1) => KafkaUtils.createDirectStream[String, String, <StringDecoder: error>, <StringDecoder: error>](context, kafkaParams, topics).<map: error>(x$1))[0m
+[0m[[0m[31merror[0m] [0m[0m  KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](context, kafkaParams, topics).map(_)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/TwitterLiveStreaming/PrintTweets.scala:6:8: object StreamingContext is not a member of package org.apache.spark.streaming[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.streaming.StreamingContext[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/TwitterLiveStreaming/PrintTweets.scala:20:17: not found: type StreamingContext[0m
+[0m[[0m[31merror[0m] [0m[0m  val ssc = new StreamingContext("local[*]", "PrintTweets", Seconds(1))[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/TwitterLiveStreaming/PrintTweets.scala:20:61: not found: value Seconds[0m
+[0m[[0m[31merror[0m] [0m[0m  val ssc = new StreamingContext("local[*]", "PrintTweets", Seconds(1))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/kieran/src/SparkExamples/src/main/scala/TwitterLiveStreaming/PrintTweets.scala:23:16: Symbol 'term org.apache.spark.streaming.api' is missing from the classpath.[0m
+[0m[[0m[31merror[0m] [0m[0mThis symbol is required by 'method org.apache.spark.streaming.twitter.TwitterUtils.createStream'.[0m
+[0m[[0m[31merror[0m] [0m[0mMake sure that term api is in your classpath and check for conflicting dependencies with `-Ylog-classpath`.[0m
+[0m[[0m[31merror[0m] [0m[0mA full rebuild may help if 'TwitterUtils.class' was compiled against an incompatible version of org.apache.spark.streaming.[0m
+[0m[[0m[31merror[0m] [0m[0m  val stream = TwitterUtils.createStream(ssc, None)[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m8 errors found[0m

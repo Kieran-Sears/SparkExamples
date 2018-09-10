@@ -216,6 +216,8 @@
           <root url="jar://$USER_HOME$/.cache/coursier/v1/https/artifactory.flexys.co.uk/artifactory/mvn-v-release/org/scala-lang/scala-compiler/2.11.12/scala-compiler-2.11.12-sources.jar!/" />
           <root url="jar://$USER_HOME$/.cache/coursier/v1/https/artifactory.flexys.co.uk/artifactory/mvn-v-release/org/scala-lang/scala-library/2.11.12/scala-library-2.11.12-sources.jar!/" />
           <root url="jar://$USER_HOME$/.cache/coursier/v1/https/artifactory.flexys.co.uk/artifactory/mvn-v-release/org/scala-lang/scala-reflect/2.11.12/scala-reflect-2.11.12-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.cache/coursier/v1/https/artifactory.flexys.co.uk/artifactory/mvn-v-release/org/scala-lang/scala-compiler/2.12.6/scala-compiler-2.12.6-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.cache/coursier/v1/https/artifactory.flexys.co.uk/artifactory/mvn-v-release/org/scala-lang/scala-reflect/2.12.6/scala-reflect-2.12.6-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

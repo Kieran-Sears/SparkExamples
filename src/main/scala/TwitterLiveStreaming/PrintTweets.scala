@@ -1,35 +1,38 @@
 package TwitterLiveStreaming
 
 import java.util.concurrent.atomic.AtomicLong
+
 import org.apache.spark.streaming._
 import org.apache.spark.streaming.twitter._
-import org.apache.spark.streaming.StreamingContext
-import Utilities._
+import Utils.Utilities._
+import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
 
 object PrintTweets extends App {
 
-  // these side effect counters should be stored in a table
   var totalTweets = new AtomicLong(0)
   var totalChars = new AtomicLong(0)
 
-  // initialise the receiver
   setupTwitter()
   setupLogging()
 
-  val ssc = new StreamingContext("local[*]", "PrintTweets", Seconds(1))
+  val conf = new SparkConf()
+  conf setMaster "local[*]" // TODO only for local dev, comment out for deployment
+  conf setAppName "PrintTweets"
+
+  val streamingServiceContext = new StreamingContext(conf, Seconds(1))
 
 
-  val stream = TwitterUtils.createStream(ssc, None)
+  val stream = TwitterUtils.createStream(streamingServiceContext, None)
   val tweets = stream.map(status => status.getText)
   val lengths = tweets.map(tweet => tweet.length)
 
   saveToFile()
   meanCharactersPerTweet()
 
-  ssc.checkpoint("SomeCheckPoint")
-  ssc.start()
-  ssc.awaitTermination()
+  streamingServiceContext.checkpoint("SomeCheckPoint")
+  streamingServiceContext.start()
+  streamingServiceContext.awaitTermination()
 
   def saveToFile() {
     tweets.foreachRDD((x, y) =>
@@ -53,7 +56,7 @@ object PrintTweets extends App {
 
   def popularHashTags() ={
     tweets.foreachRDD(x => {
-      x.map(tweet => tweet.split(" ").filter(_.startsWith("#"), 1))
+      x.map(tweet => tweet.split(" ").filter(_.startsWith("#")))
     })
   }
 
